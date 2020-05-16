@@ -91,13 +91,13 @@
 font:
   size: 11.0
   normal:
-    family: Iosevka Slab
+    family: Iosevka
     style: Medium
   bold:
-    family: Iosevka Slab
+    family: Iosevka
     style: Bold
   italic:
-    family: Iosevka Slab
+    family: Iosevka
     style: Italic
 #font:
   # Normal (roman) font face

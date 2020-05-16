@@ -1,6 +1,8 @@
 #!/bin/bash
 
-THEME=${1:-nord}
+DEFAULT_THEME=nord
+
+THEME=${1:-"$DEFAULT_THEME"}
 TARGET_DIR=~
 CURR_CONFIG_FILE=.currconfig
 
