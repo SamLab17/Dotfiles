@@ -13,14 +13,10 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 " Color schemes
 Plug 'arcticicestudio/nord-vim'
-Plug 'rakr/vim-one'
-Plug 'morhetz/gruvbox'
 
 call plug#end()
 
 " Colorscheme
-
-" colorscheme gruvbox
 colorscheme nord 
 
 " Undo after quit
