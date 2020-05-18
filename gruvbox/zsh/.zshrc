@@ -24,7 +24,7 @@ case `uname` in
 		export PATH="${PATH}:${HOME}/Library/Python/3.6/bin/:${HOME}/.local/bin"
 	;;
 	Linux)
-		export PATH="${PATH}:${HOME}/.local/bin/"
+		export PATH="${PATH}:${HOME}/.local/bin/:/snap/bin"
 	;;
 esac
 
