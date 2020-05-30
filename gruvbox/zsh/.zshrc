@@ -13,15 +13,22 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-export CONFIG_DIR="${HOME}/dotfiles"
+# The directory this script is being run from
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+# The root of the dotfiles repo is 2 levels up from here
+CONFIG_DIR="${SCRIPT_DIR}/../../"
 
+# Aliases for scripts or copying template files
 alias utssh="python3 ${CONFIG_DIR}/scripts/UnixHostFinder.py slaberge"
-alias vim=nvim
 alias formatfile="cp ${CONFIG_DIR}/templates/clang-format .clang-format"
 
+# NeoVim editor
+alias vim=nvim
+
+
+# Paths for Mac and Linux
 case `uname` in
 	Darwin)
-		# Commands for macOS
 		export PATH="${PATH}:${HOME}/Library/Python/3.6/bin:${HOME}/.local/bin"
 	;;
 	Linux)
