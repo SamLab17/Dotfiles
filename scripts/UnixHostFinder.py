@@ -4,6 +4,8 @@ from subprocess import call
 import sys
 import ssl
 
+SKIP_HOSTS = ['aggravation']
+
 # Check that username was included in command line
 if(len(sys.argv) < 2):
 	print(f"Usage: python3 {sys.argv[0]} <CS username>")
@@ -50,12 +52,14 @@ for host in soup.find_all('tr'):
 			hosts.append((name, users, load))
 
 # See if we updated the default value and found a host
-if len(hosts) > 0:	
+if len(hosts) > 0:
 	hosts.sort(key=lambda tup: (tup[1], tup[2]))
+	hosts = [host for host in hosts if host[0] not in SKIP_HOSTS]
 	NUM_ATTEMPTS = 10
 	for i in range(0, min(len(hosts), NUM_ATTEMPTS)):
 		hostname = hosts[i][0]
 		try:
+			print(hostname)
 			call(['ssh', username + '@' + hostname + '.cs.utexas.edu'])
 			sys.exit(0)
 		except Exception as e:
